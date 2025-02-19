@@ -128,6 +128,15 @@ def print_extracted_data(data: Dict[str, Any], indent: int = 0):
                 value = "Not found"
             print(f"{prefix}{key}: {value}")
 
+def save_to_json(data: Dict[str, Any], output_file: str):
+    """Save the extracted data to a JSON file."""
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"\nData has been saved to: {output_file}")
+    except Exception as e:
+        print(f"Error saving JSON file: {str(e)}")
+
 def main():
     # Get PDF file path from user
     pdf_path = input("Enter the path to the PDF file: ")
@@ -140,9 +149,14 @@ def main():
         print(f"\nProcessing {pdf_path}...")
         result = process_pdf_with_gemini(pdf_path)
         
+        # Print the extracted information
         print("\nExtracted Information:")
         print("=====================")
         print_extracted_data(result)
+        
+        # Save to JSON file
+        output_file = f"{os.path.splitext(pdf_path)[0]}_extracted.json"
+        save_to_json(result, output_file)
         
     except Exception as e:
         print(f"Error: {str(e)}")

@@ -1,0 +1,149 @@
+[
+    {
+        "name": "fundingName",
+        "type": "string",
+        "description": "The name or title of the funding program or grant"
+    },
+    {
+        "name": "applicationDate",
+        "type": "string",
+        "description": "The application deadline or date range for the funding"
+    },
+    {
+        "name": "fundingAmount",
+        "type": "object",
+        "description": "Details about the funding amount",
+        "children": [
+            {
+                "name": "amount",
+                "type": "string",
+                "description": "The maximum or available funding amount"
+            },
+            {
+                "name": "details",
+                "type": "string",
+                "description": "Additional details about funding limits or conditions"
+            }
+        ]
+    },
+    {
+        "name": "eligibility",
+        "type": "object",
+        "description": "Who can apply and what are the requirements",
+        "children": [
+            {
+                "name": "whoCanApply",
+                "type": "string",
+                "description": "Description of eligible applicants or organizations"
+            },
+            {
+                "name": "requirements",
+                "type": "array",
+                "description": "List of application requirements and criteria",
+                "children": [
+                    {
+                        "name": "requirement",
+                        "type": "string",
+                        "description": "Individual requirement or criterion"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "applicationProcess",
+        "type": "object",
+        "description": "Information about the application process",
+        "children": [
+            {
+                "name": "steps",
+                "type": "array",
+                "description": "Steps in the application process",
+                "children": [
+                    {
+                        "name": "step",
+                        "type": "string",
+                        "description": "Individual step in the application process"
+                    }
+                ]
+            },
+            {
+                "name": "timeline",
+                "type": "string",
+                "description": "Timeline or important dates in the application process"
+            }
+        ]
+    },
+    {
+        "name": "evaluationCriteria",
+        "type": "array",
+        "description": "Criteria used to evaluate applications",
+        "children": [
+            {
+                "name": "criterion",
+                "type": "string",
+                "description": "Individual evaluation criterion"
+            }
+        ]
+    },
+    {
+        "name": "requiredDocuments",
+        "type": "array",
+        "description": "List of documents required from the company",
+        "children": [
+            {
+                "name": "document",
+                "type": "string",
+                "description": "Individual required document"
+            }
+        ]
+    },
+    {
+        "name": "applicationConditions",
+        "type": "array",
+        "description": "Specific conditions that must be met for application",
+        "children": [
+            {
+                "name": "condition",
+                "type": "string",
+                "description": "Individual application condition"
+            }
+        ]
+    },
+    {
+        "name": "importantLinks",
+        "type": "array",
+        "description": "Important URLs or references mentioned in the document",
+        "children": [
+            {
+                "name": "link",
+                "type": "object",
+                "description": "Individual link information",
+                "children": [
+                    {
+                        "name": "description",
+                        "type": "string",
+                        "description": "Description of what the link is for"
+                    },
+                    {
+                        "name": "url",
+                        "type": "string",
+                        "description": "The actual URL or reference"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "coveredExpenses",
+        "type": "array",
+        "description": "List of expenses that are covered by the funding",
+        "children": [
+            {
+                "name": "expense",
+                "type": "string",
+                "description": "Individual expense item or category that is covered"
+            }
+        ]
+    }
+] 
